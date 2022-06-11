@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=0">
     <title>MangoPP</title>
     <link rel="stylesheet" href="../sample/static/main.css"/>
 
@@ -12,13 +12,26 @@
 <div class="menu">
     <nav>
         <ul class="ul">
-            <li><a href="#">p01</a></li>
-            <li><a href="#">p02</a></li>
-            <li><a href="#">p03</a></li>
-            <li><a href="#">p04</a></li>
-            <li><a href="#">p05</a></li>
+            <li>
+                <div id="menu_button" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <a href="#">12345</a>
+            </li>
+            <li><a href="#">12345</a></li>
+            <li><a href="#">12345</a></li>
+            <li><a href="#">12345</a></li>
+            <li><a href="#">12345</a></li>
         </ul>
     </nav>
+
+    <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }
+        </script>
 </div>
 <div calss="content">
     <div class="banner">
@@ -34,25 +47,45 @@
 
     <div class="stock">
         <div class="stock_info">
-            <div class="stock_name">股票名稱</div>
-            <div class="stock_number">股票代號</div>
-            <div class="stock_fullname">股票全名</div>
-            <div class="stock_time">YYYY/MM/DD HH/MM</div>
+            <div id="stock_name">股票名稱</div>
+            <div class="stock_info_right">
+                <div id="stock_number">股票代號</div>
+                <div id="stock_fullname">股票全名</div>
+            </div>
+
 
             <div class="stock_market_info">
+                <table>
+                    <tr>
+                        <td rowspan="2"><div id="stock_time">YYYY/MM/DD HH/MM</div></td>
+                        <td><div id="best_bid_price">最佳買入價</div></td>
+                        <td><div id="best_ask_price">最佳賣出價</div></td>
+                    </tr>
+                    <tr>
+                        <td><div id="best_bid_volume">最佳買入量</div></td>
+                        <td><div id="best_bid_volume">最佳賣出量</div></td>
+                    </tr>
+                    <tr>
+                        <td><div id="opening_price">開盤價</div></td>
+                        <td><div id="highest_price">最高價</div></td>
+                        <td><div id="lowest_price">最低價</div></td>
+                    </tr>
+                </table>
+                <!--
+                <div class="stock_time">YYYY/MM/DD HH/MM</div>
                 <div>
-                    <span class="best_bid_price">最佳買入價:</span>
-                    <span class="best_bid_volume">最佳買入量:</span>
+                    最佳買入價:<span class="best_bid_price">000</span>
+                    最佳買入量:<span class="best_bid_volume">000</span>
                 </div>
                 <div>
-                    <span class="best_ask_price">最佳賣出價:</span>
-                    <span class="best_ask_volume">最佳賣出量:</span>
+                    最佳賣出價:<span class="best_ask_price">000</span>
+                    最佳賣出量:<span class="best_ask_volume">000</span>
                 </div>
                 <div>
-                    <span class="opening_price">開盤價:</span>
-                    <span class="highest_price">最高價:</span>
-                    <span class="lowest_price">最低價:</span>
-                </div>
+                    開盤價:<span class="opening_price">000</span>
+                    最高價:<span class="highest_price">000</span>
+                    最低價:<span class="lowest_price">000</span>
+                </div> -->
             </div>
 
         </div>
@@ -60,7 +93,7 @@
     <div class="chart">
         <span id="chart_date">
             <text>要查詢的日期:</text>
-            <input type="month"/>
+            <input type="montd"/>
         </span>
         <br/>
         <img id="chart" src = "">

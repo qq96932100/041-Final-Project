@@ -47,6 +47,23 @@ body{
     height: 65%;
 }
 
+.stock{
+    background-color: rgb(197, 197, 155);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.stock_name{
+    background-color: #85B8CB;
+    font-size: 5em;
+    margin:50px;
+}
+.stock_number{
+    background-color: #85B8CB;
+    font-size: 5em;
+    margin:50px;
+}
+
 nav{
     width: 150px;
     text-align: center;
@@ -56,9 +73,7 @@ nav{
 
 
 }
-
-/* 選取器空格代表下一層 */
-nav a{
+nav a{/* 選取器空格代表下一層 */
 
     color: #283B42;
     text-decoration: none;
@@ -68,16 +83,12 @@ nav a{
     transition: 0.5s; /* transition效果展示至結束的秒數（延長）　*/
     align-items: stretch flex-start flex-end center baseline;
 }
-
-/* 碰到觸發條件 */
-nav a:hover{
+nav a:hover{/* 碰到觸發條件 */
     background-color: #1D6A96;
 }
-
-nav a:active{
+nav a:active{/* 觸發條件會由上至下判斷，所以順序是有關係的 */
     background-color: #e4ce8b;
 }
-/* 觸發條件會由上至下判斷，所以順序是有關係的 */
 
 .ul {
     padding: 0%;

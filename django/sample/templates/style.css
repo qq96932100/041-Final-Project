@@ -1,0 +1,62 @@
+h1 {
+    color:#283B42;
+    background-color:#85B8CB;
+}
+
+p {
+    color:#283B42;
+    background-color:#85B8CB;
+}
+
+.menu{
+    /* margin-left:-1%;
+    margin-top:-3%; */
+    height:100vh;
+    width: 150px;
+    background-color: #85B8CB;
+    float:left;
+    margin: 0 auto;
+}
+
+.content{
+    width:100vw;
+    height:100vh;
+    background-color: white;
+}
+
+nav{
+    width: 150px;
+    text-align: center;
+    font-size: 0;
+    position: fixed;
+    display: inline;
+
+
+}
+
+/* 選取器空格代表下一層 */
+nav a{
+
+    color: #283B42;
+    text-decoration: none;
+    display: flex;
+    padding: 20px 60px 20px 60px;
+    font-size: 16px;
+    transition: 0.5s; /* transition效果展示至結束的秒數（延長）　*/
+    align-items: stretch flex-start flex-end center baseline;
+}
+
+/* 碰到觸發條件 */
+nav a:hover{
+    background-color: #1D6A96;
+}
+
+nav a:active{
+    background-color: red;
+}
+/* 觸發條件會由上至下判斷，所以順序是有關係的 */
+
+.ul {
+    padding: 0%;
+    margin:0%;
+}

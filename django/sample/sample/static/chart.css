@@ -1,6 +1,5 @@
 @import './reset.css';
-/*
-Color Set
+/* Color Set
 #564787
 #DBCBD8
 #F2FDFF
@@ -12,7 +11,7 @@ body{
     font-family:'微軟正黑體';
 }
 
-.menu{
+.menu{/*fixed*/
     color: #101935;
     height:100vh;
     width: 10vw;
@@ -21,7 +20,6 @@ body{
     margin: 0 auto;
     position: fixed;
 }
-
 #menu_button {
     margin:auto;
     display: inline-block;
@@ -48,11 +46,12 @@ body{
     transform: rotate(45deg) translate(-8px, -8px);
   }
 
-
 .content{
     width:100vw;
-    height:100vh;
-    background-color: #F2FDFF;
+    /* background-color: #F2FDFF; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner{/*fixed*/
@@ -67,73 +66,6 @@ body{
     margin: auto;
     font-size: 5em;
 }
-
-.search_bar{
-    background-color: #1C2D5E;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    height: 6vh;
-}
-#search_bar_input{
-    font-size: large;
-    height:65%;
-    width:40%;
-}
-#search_bar_btn{
-    margin-left: 0.2cm;
-    height: 65%;
-}
-
-.stock{
-    color:#F2FDFF;
-    background-color: #1C2D5E;
-    display: flex;
-    height:69vh;
-    justify-content: center;
-    align-items: center;
-}
-#stock_name{
-    /* background-color: #85B8CB; */
-    font-size: 5em;
-    margin:120px 50px 40px 50px;
-    display:inline-block;
-    vertical-align:top;
-}
-.stock_info_right{
-    /* background-color: #85B8CB; */
-    margin:40px;
-    display:inline-block;
-}
-#stock_number{
-    /* background-color: #85B8CB; */
-    font-size: 2em;
-    margin:25px;
-    padding:25px;
-}
-#stock_fullname{
-    /* background-color: #85B8CB; */
-    font-size: 2em;
-    margin:25px;
-    padding:25px;
-}
-.stock_market_info{
-    /* background-color: #F2FDFF; */
-    font-size: 2em;
-    margin:10px;
-    padding:10px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-td{
-    /* background-color: white; */
-    padding: 10px;
-    margin: 20px;
-}
-
-
 
 nav{/*fixed*/
     width: 10vw;
@@ -159,8 +91,38 @@ nav a:active{/* 觸發條件會由上至下判斷，所以順序是有關係的 
     background-color: #3B315E;
 }
 
-.ul {
-    padding: 0%;
-    margin:0%;
+.chart{
+    width: 100vw;
+    height: 75vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #1C2D5E;
 }
-
+#chart_date{
+    margin:2vh;
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    color:#F2FDFF;
+    height: 8vh;
+    font-size: 2em;
+}
+.date_input{
+    font-size: large;
+}
+.chart_graphic{
+    width: 100%;
+    height:60%;
+    display:flex;
+    justify-content:space-evenly;
+}
+#chart_1{
+    width:auto;
+    height: 100%;
+}
+#chart_2{
+    width:auto;
+    height: 100%;
+}

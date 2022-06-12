@@ -1,80 +1,126 @@
 @import './reset.css';
-/*
-Color Set
+/*Color Set
 #564787
 #DBCBD8
 #F2FDFF
 #9AD4D6
 #101935
  */
-
 body{
     font-family:'微軟正黑體';
 }
 
+
+/* --左側選單-- */
 .menu{
     color: #101935;
     height:100vh;
-    width: 10vw;
+    width: 15vw;
     background-color: #6554A0;
-    float:left;
-    margin: 0 auto;
+    /* float:left; */
+    margin: 0px auto;
     position: fixed;
 }
+nav{/*左側選單區塊*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+nav a{
+    padding: 15%;
+    color: #F2FDFF;
+    text-decoration: none;
+    display: flex;
+    font-size: 20px;
+    transition: 0.5s;
+    align-items: center;
+    justify-content: center;
+}
+nav a:hover{
+    background-color: #564686;
+}
+nav a:active{
+    background-color: #3B315E;
+}
+ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#for_menu_title{
+    display: inline-flex;
+    flex-direction: row;
+    width: 200%;
+}
+#menu_text{
+    color:white;
+    width:100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: horizontal;
+    padding:1%;
+    flex-direction: row;
+    font-size:35px;
+}
+#menu_button {/*for左側選單的按鈕*/
+    float: right;
+    top:0px;
+    width: 100%;
+    align-self:flex-start;
+    padding-left: 15px;
 
-#menu_button {
-    margin:auto;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .bar1, .bar2, .bar3 {
+}
+.bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
     background-color: #333;
     margin: 6px 0;
     transition: 0.4s;
-  }
-
-  .change .bar1 {
+}
+.change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
-  }
-
-  .change .bar2 {opacity: 0;}
-
-  .change .bar3 {
+}
+.change .bar2 {opacity: 0;}
+.change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
-  }
+}
 
-
+/* --右側內容-- */
 .content{
+    display:flex;
     width:100vw;
     height:100vh;
     background-color: #F2FDFF;
 }
 
-.banner{/*fixed*/
+.banner{/*右上區塊_banner*/
     background-color: #47AAAE;
     color:#F2FDFF;
     height:25vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 15vw;
+
 }
 #banner_title{
     margin: auto;
-    font-size: 5em;
+    font-size: 4em;
 }
 
-.search_bar{
+.search_bar{/*右中區塊_search_bar*/
     background-color: #1C2D5E;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2em;
     height: 6vh;
+    padding-left: 15vw;
+
 }
 #search_bar_input{
     font-size: large;
@@ -86,81 +132,62 @@ body{
     height: 65%;
 }
 
-.stock{
+.stock{/*右下區塊_stock資訊*/
     color:#F2FDFF;
     background-color: #1C2D5E;
     display: flex;
     height:69vh;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    padding-left: 15vw;
+}
+.stock_info{
+    display:flex;
+    flex-direction: column;
+    width: 75%;
+}
+#stock_info_upper{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 #stock_name{
     /* background-color: #85B8CB; */
     font-size: 5em;
-    margin:120px 50px 40px 50px;
+    /* margin:10% 5% 10% 5%; */
+    padding: 10% 5% 10% 5%;
     display:inline-block;
     vertical-align:top;
 }
 .stock_info_right{
-    /* background-color: #85B8CB; */
-    margin:40px;
-    display:inline-block;
+    /* margin:40px; */
+    padding: 0% 5% 0% 5%;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
 }
 #stock_number{
-    /* background-color: #85B8CB; */
     font-size: 2em;
-    margin:25px;
-    padding:25px;
+    margin:1% 0% 1% 0%;
+    padding:1% 0% 1% 0%;
 }
 #stock_fullname{
-    /* background-color: #85B8CB; */
     font-size: 2em;
-    margin:25px;
-    padding:25px;
+    margin:1% 0% 1% 0%;
+    padding:1% 0% 1% 0%;
 }
 .stock_market_info{
-    /* background-color: #F2FDFF; */
-    font-size: 2em;
-    margin:10px;
-    padding:10px;
+    font-size: 1.5em;
     display:flex;
     justify-content: center;
     align-items: center;
 }
-td{
-    /* background-color: white; */
-    padding: 10px;
-    margin: 20px;
-}
 
-
-
-nav{/*fixed*/
-    width: 10vw;
+table{
+    width:100%;
     text-align: center;
-    font-size: 0;
-    position: fixed;
-    display: inline-block;
 }
-nav a{/* 選取器空格代表下一層 */
-
-    color: #F2FDFF;
-    text-decoration: none;
-    display: flex;
-    padding: 20px 60px 20px 60px;
-    font-size: 16px;
-    transition: 0.5s; /* transition效果展示至結束的秒數（延長）　*/
-    align-items: stretch flex-start flex-end center baseline;
+th,td{
+    padding:2%;
+    border-bottom: 1px solid #ddd;
 }
-nav a:hover{/* 碰到觸發條件 */
-    background-color: #564686;
-}
-nav a:active{/* 觸發條件會由上至下判斷，所以順序是有關係的 */
-    background-color: #3B315E;
-}
-
-.ul {
-    padding: 0%;
-    margin:0%;
-}
-

@@ -10,3 +10,6 @@
 # 忽略所有附檔名是 .tmp .pyc的檔案
 *.tmp
 *.pyc
+*.pyc
+
+/sample/sampleApp/__pycache__/*.cpython-39.pyc

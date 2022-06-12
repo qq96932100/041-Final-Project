@@ -6,4 +6,4 @@ def sayhello(request):
     return HttpResponse("Hello")
 def templates(request):
     now = datetime.now()
-    return render(request,"Hello.html",locals())
+    return render(request,"index.html",locals())

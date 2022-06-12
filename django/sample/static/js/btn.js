@@ -1,8 +1,8 @@
-var search_bar_btn = document.getElementById('search_bar_btn');
+const search_bar_btn = document.getElementById('search_bar_btn');
 
 search_bar_btn.addEventListener('click', function () {
     if(get_input() != ''){
-      show_stock_number();
+      set_stock_number();
       send_data()    
     }
     // reload();
@@ -14,7 +14,7 @@ function get_input() {
       return search_bar_input;
   }
 
-function show_stock_number() {
+function set_stock_number() {
       document.getElementById("stock_number").innerHTML = get_input();
   }
 

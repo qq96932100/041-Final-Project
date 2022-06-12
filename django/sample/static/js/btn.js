@@ -1,11 +1,9 @@
 var search_bar_btn = document.getElementById('search_bar_btn');
 
-
 search_bar_btn.addEventListener('click', function () {
-    console.log('Parent Capturing');
     if(get_input() != ''){
-      show_stock_number();   
-      post_data();  
+      show_stock_number();
+      send_data()    
     }
     // reload();
   }, true);
@@ -24,16 +22,38 @@ function reload() {
     location.reload()
   }
 
-function post_data() {
-  var xhr = new XMLHttpResquest; //創建xhr
-  var data = { //創建json
-    input : get_input()
-  }
-  xhr.open('post',location,true);
-  // 傳送資料的格式選擇為 JSON
-  xhr.setRequestHeader('Content-type', 'application/json');
-  // 用另一個變數儲存字串化的 JSON
-  var data = JSON.stringify(account);
-  // 傳送
-  xhr.send(data);  
-} 
+function send_data() {
+    var xhr;
+    if (window.XMLHttpRequest) { //檢查瀏覽器的XMLHttpRequest屬性，如果為真則支持XMLHttpRequest
+      // IE7+, Firefox, Chrome, Opera, Safari 瀏覽器執行代碼
+      xhr=new XMLHttpRequest(); 
+    } else {
+      // IE6, IE5 瀏覽器執行代碼
+      xhr=new ActiveXObject("Microsoft.XMLHTTP"); 
+    }
+ 
+  /*
+    xhr.open(get,url,async);  
+    send(string);  //post請求時才使用字符串參數，否則不用帶參數。
+
+    method：請求的類型，常見的get或post方法
+    url：向伺服器請求的地址
+    async：true（異步）或 false（同步）,默認為true異步
+  */
+
+  // get方式：
+  xhr.open('GET', location + '?input='+ get_input());
+  xhr.send();
+
+  // POST方式
+  // xhr.open('POST', "/articles/" + article_id + "/likes/");
+  // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8"); //必須寫在open和send中間
+
+  // xhr.send("key=value&key2=value2");
+      
+  /*
+  注意：
+  1) post請求一定要設置請求頭的格式內容;
+  2) post請求參數放在send裡面，即請求體.
+  */
+}

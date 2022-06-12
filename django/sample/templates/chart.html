@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=0">
+    <title>MangoPP</title>
+    <link rel="stylesheet" href="../static/chart.css"/>
+
+</head>
+<body>
+
+<div class="menu">
+    <nav>
+        <ul class="ul">
+            <li>
+                <div id="for_menu_title">
+                    <div id="menu_text">目錄</div>
+                    <div id="menu_button" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../templates/index.html">台灣股票查詢系統</a></li>
+            <li><a href="../templates/chart.html">歷史走勢圖</a></li>
+            <!-- <li><a href="#">Page_3</a></li>
+            <li><a href="#">Page_4</a></li> -->
+            <li><a href="#">關於我們</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }
+    </script>
+
+</div>
+<div calss="content">
+    <div class="banner">
+        <div id="banner_title">
+            041期末專題_台灣股票查詢系統
+        </div>
+    </div>
+
+    <div class="chart">
+        <div id="chart_date">
+            <span class="chart_search_text">查詢日期&nbsp;</span>
+            <span class="chart_search_text">From&nbsp;:&nbsp;</span>
+            <input class ="date_input" type="month" id="begin_date"/>
+            <span class="chart_seearch_text">&nbsp;To&nbsp;:&nbsp;</span>
+            <input class ="date_input" type="month" id="end_date"/>
+            <button id="chart_date_btn">Search</button>
+        </div>
+        <div class="chart_graphic">
+            <img id="chart_1" src ="../static/chart_example.png">
+            <img id="chart_2" src ="../static/chart_example.png">
+        </div>
+    </div>
+</div>
+<!-- js -->
+<script src = "../static/js/chart.js"></script>
+</body>
+</html>

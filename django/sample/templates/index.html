@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=0">
+    <title>MangoPP</title>
+    <link rel="stylesheet" href="../static/main.css"/>
+
+</head>
+<body>
+    <div class="menu">
+        <nav>
+            <ul class="ul">
+                <li>
+                    <div id="for_menu_title">
+                        <div id="menu_text">目錄</div>
+                        <div id="menu_button" onclick="myFunction(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="../templates/index.html">台灣股票查詢系統</a></li>
+                <li><a href="../templates/chart.html">歷史走勢圖</a></li>
+                <!-- <li><a href="#">Page_3</a></li>
+                <li><a href="#">Page_4</a></li> -->
+                <li><a href="#">關於我們</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            function myFunction(x) {
+              x.classList.toggle("change");
+            }
+        </script>
+
+    </div>
+<div calss="content">
+    <div class="banner">
+        <div id="banner_title">
+            041期末專題_台灣股票查詢系統
+        </div>
+    </div>
+
+    <div class="search_bar">
+        <input id="search_bar_input" type="text"/>
+        <button id="search_bar_btn" type="button">Search</button>
+    </div>
+
+    <div class="stock">
+        <div class="stock_info">
+            <div id="stock_info_upper">
+                <div id="stock_name">股票名稱</div>
+                <div class="stock_info_right">
+                    <div id="stock_number">股票代號</div>
+                    <div id="stock_fullname">股票全名</div>
+                </div>
+            </div>
+
+
+            <div class="stock_market_info">
+                <table>
+                    <tr>
+                        <td colspan="2"><div id="stock_time">HH:MM</div></td>
+                        <td><div>最佳買入價</div></td>
+                        <td><div id="best_bid_price">123</div></td>
+                        <td><div>最佳賣出價</div></td>
+                        <td><div id="best_ask_price">123</div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div id="stock_time"> YYYY/MM/DD</div></td>
+                        <td><div>最佳買入量</div></td>
+                        <td><div id="best_bid_volume">123</div></td>
+                        <td><div>最佳賣出量</div></td>
+                        <td><div id="best_bid_volume">123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div >開盤價</div></td>
+                        <td><div  id="opening_price">123</div></td>
+                        <td><div >最高價</div></td>
+                        <td><div  id="highest_price">123</div></td>
+                        <td><div >最低價</div></td>
+                        <td><div  id="lowest_price">123</div></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- js -->
+<script src = "../static/js/btn.js"></script>
+</body>
+</html>

@@ -1,9 +1,11 @@
 const search_bar_btn = document.getElementById('search_bar_btn');
+let url = "http://127.0.0.1:5500/django/sample/templates/index/?q=123&input=avasdemon"
 
 search_bar_btn.addEventListener('click', function () {
     if(get_input() != ''){
       set_stock_number();
-      send_data()    
+      send_data();
+      console.log('par:' + url.search());    
     }
     // reload();
   }, true);

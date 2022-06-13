@@ -14,7 +14,11 @@ for k in stock_number:
     # /.cursor()        建立資料庫指標 
     # /.execute()       建立資料庫的colume_label
     # /.commit()        確認完成
+<<<<<<< Updated upstream
     for i in range(7,13):
+=======
+    for i in range(6,13):
+>>>>>>> Stashed changes
         df = pd.read_csv('D:/041final_project/041-Final-Project/django/sample/back_end/0050/0050 2021 '+str(i)+'月'+'.csv', index_col=[0])
         # 寫入資料表 /.to_sql 關鍵參數為:資料表名字,連線參數,
         # 是否已存在,是否寫入pandas dataframe索引值

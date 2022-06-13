@@ -4,6 +4,6 @@ from datetime import datetime
 # Create your views here.
 def sayhello(request):
     return HttpResponse("Hello")
-def templates(request):
+def index(request):
     now = datetime.now()
-    return render(request,"Hello.html",locals())
+    return render(request,"index.html",locals())

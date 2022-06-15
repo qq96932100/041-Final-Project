@@ -6,22 +6,55 @@
 #9AD4D6
 #101935
  */
+
 body{
     font-family:'微軟正黑體';
 }
 
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
 
-/* --左側選單-- */
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+/*
+
+--左側選單--
+
+*/
+
+
 .menu{
     color: #101935;
     height:100vh;
     width: 15vw;
-    background-color: #6554A0;
+    background-color: #335585;
     /* float:left; */
     margin: 0px auto;
     position: fixed;
 }
-nav{/*左側選單區塊*/
+/*左側選單區塊*/
+nav{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -37,10 +70,10 @@ nav a{
     justify-content: center;
 }
 nav a:hover{
-    background-color: #564686;
+    background-color: #506b99;
 }
 nav a:active{
-    background-color: #3B315E;
+    background-color: #31425e;
 }
 .menu_ul{
   display: flex;
@@ -60,22 +93,22 @@ nav a:active{
     justify-content: center;
     align-items: center;
     writing-mode: horizontal;
-    padding:1%;
+    padding:2% 1% 2% 1%;
     flex-direction: row;
     font-size:35px;
 }
-#menu_button {/*for左側選單的按鈕*/
+/*for左側選單的按*/
+#menu_button {
     float: right;
     top:0px;
     width: 100%;
     align-self:flex-start;
     padding-left: 15px;
-
 }
 .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
-    background-color: #333;
+    background-color: rgb(197, 197, 197);
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -89,7 +122,14 @@ nav a:active{
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
-/* --右側內容-- */
+
+/*
+
+--右側內容--
+
+*/
+
+
 .content{
     display:flex;
     width:100vw;
@@ -97,54 +137,151 @@ nav a:active{
     background-color: #F2FDFF;
 }
 
-.banner{/*右上區塊_banner*/
-    background-color: #47AAAE;
+
+/*
+
+右上區塊_banner
+
+*/
+
+
+.banner{
+    background-color: #29405a;
     color:#F2FDFF;
     height:25vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 15vw;
-
+    /* padding-left: 15vw; */
 }
 #banner_title{
     margin: auto;
     font-size: 4em;
 }
 
-.search_bar{/*右中區塊_search_bar*/
-    background-color: #1C2D5E;
+
+/*
+
+右中區塊_search_bar
+
+*/
+
+
+.search_bar_block{
+    /* background-color: #1C2D5E; */
     display: flex;
     justify-content:center;
     align-items: center;
     font-size: 2em;
     height: 6vh;
-    padding: 2vh 0% 0% 15vw;
-
+    padding: 2vh 0% 0% 0%;
 }
 #search_bar_input{
     font-size: large;
     height:65%;
     width:20%;
+    display: block;
+    width: 100%;
+    /* padding-top: 36.6666666667px; */
+    border: none;
+    border-radius: 0;
+    color: white;
+    background: #2c486d;
+    /* font-size: 36.6666666667px; */
+    transition: 0.3s ease;
+}
+.search_bar_label {
+    position: absolute;
+    top: 32%;
+    color: rgba(255, 255, 255, .5);
+    font: 400 20px Arial;
+    cursor: text;
+    transition: 0.25s ease;
+}
+#search_bar_input:focus {
+    outline: none;
+}
+#search_bar_input:focus ~ label {
+    top: 29.5%;
+    font: 400 15px Arial;
+    color: #61b1f3;
+}
+#search_bar_input:valid ~ label {
+    top: 29.5%;
+    font: 400 15px Arial;
+    color: #559b92;
+}
+.bar {
+    background: rgba(255, 255, 255, .5);
+    content: ' ';
+    width: 500px;
+    height: 3.6666666667px;
+    transition: 0.3s ease;
+    position: relative;
+}
+.bar:before {
+    content: ' ';
+    position: absolute;
+    width: 500px;
+    height: 100%;
+    /* background: #2196f3; */
+    /* transform: translateX(0%); */
+}
+#search_bar_input:focus ~ .bar:before{
+    /* transform: translateX(1%); */
+    background: #61b1f3;
+}
+#search_bar_input:valid ~ .bar:before{
+    background-color: #559b92;
 }
 #search_bar_btn{
-    margin-left: 0.2cm;
-    height: 65%;
+     margin-left: 0.3cm;
+    /*height: 65%; */
+    display: inline-block;
+    padding: 6px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4c5c7b;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 9px #999;
+}
+#search_bar_btn:hover {background-color: #435069}
+#search_bar_btn:active {
+  background-color: #5b5c5c;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 .search_bar_text{
-    color:white;
-    font-size: larger;
-
+    position: absolute;
+    top: 36.6666666667px;
+    color: rgba(255, 255, 255, 0.5);
+    font: 400 36.6666666667px Roboto;
+    cursor: text;
+    transition: 0.25s ease;
 }
 
-.stock{/*右下區塊_stock資訊*/
+
+/*
+
+右下區塊_stock資訊
+
+*/
+
+
+.stock{
     color:#F2FDFF;
-    background-color: #1C2D5E;
+    background-color: #2c486d;
     display: flex;
-    height:67vh;
+    height:75vh;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding-left: 15vw;
+    /* padding-left: 15vw; */
 }
 .stock_info{
     display:flex;
@@ -187,5 +324,3 @@ nav a:active{
     justify-content: center;
     align-items: center;
 }
-
-

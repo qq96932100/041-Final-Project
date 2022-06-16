@@ -5,6 +5,8 @@
     <meta name="viewport" content="widtd=device-widtd, initial-scale=0">
     <title>MangoPP</title>
     <link rel="stylesheet" href="../static/about_us.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -51,12 +53,13 @@
             <div class="card_wrapper">
                 <div class="info_card">
                     <div class="profile_picture">
-                        <img src="../static/jimbo.jpeg">
+                        <img src="../static/image/jimbo.jpeg">
+                        <span class="stu_id">B0943036 曾靖諺</span>
                     </div>
                     <div class="details">
-                        <h2 class="details_name">Jimbo
+                        <h2 class="details_name">Shaber
                             <br>
-                            <span class="job_title">Reverse Master</span>
+                            <span class="job_title">Front-end</span>
                         </h2>
                     </div>
                 </div>
@@ -65,7 +68,8 @@
             <div class="card_wrapper">
                 <div class="info_card">
                     <div class="profile_picture">
-                        <img src="../static/水餃.jpg">
+                        <img src="../static/image/水餃.jpg">
+                        <span class="stu_id">B0943017 簡名駿</span>
                     </div>
                     <div class="details">
                         <h2 class="details_name">水餃
@@ -79,7 +83,8 @@
             <div class="card_wrapper">
                 <div class="info_card">
                     <div class="profile_picture">
-                        <img src="../static/喜多.jpg">
+                        <img src="../static/image/喜多.jpg">
+                        <span class="stu_id">B0943028 曾哲禹</span>
                     </div>
                     <div class="details">
                         <h2 class="details_name">喜多
@@ -96,12 +101,14 @@
             <div class="card_wrapper">
                 <div class="info_card">
                     <div class="profile_picture">
-                        <img src="../static/信德.jpg">
+                        <img src="../static/image/信德.jpg">
+                        <span class="stu_id">B0943027 黃晉晟</span>
                     </div>
                     <div class="details">
                         <h2 class="details_name">雞折
                             <br>
                             <span class="job_title">Back-end</span>
+
                         </h2>
                     </div>
                 </div>
@@ -110,7 +117,8 @@
             <div class="card_wrapper">
                 <div class="info_card">
                     <div class="profile_picture">
-                        <img src="../static/喜多.jpg">
+                        <img src="../static/image/鹿其.jpg">
+                        <span class="stu_id">B0943038 許顯麒</span>
                     </div>
                     <div class="details">
                         <h2 class="details_name">鹿其
@@ -121,10 +129,34 @@
                 </div>
             </div>
 
+
         </div>
+        <div class="row">
+            <div class="card_wrapper">
+                <div id="test">
+                    <div id="heheboi">
+                        <img src="../static/image/antihorny.png">
+                    </div>
+                    <div id="hehe">
+                        <video id="forvideo" src="../static/image/icecream.mp4" preload></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="surprise"><span id="surprise_text">智障互助會<br>沒有智障</span></div>
+
     </div>
 </div>
 
 <script src = "../sample/static/js/btn.js"></script>
+<script>
+    var $playvideo = $('#forvideo');
+    $playvideo.on('mouseenter',function(){
+        $playvideo.get(0).play();
+    });
+    $playvideo.on('mouseout',function(){
+        $playvideo.get(0).pause();
+    });
+</script>
 </body>
 </html>

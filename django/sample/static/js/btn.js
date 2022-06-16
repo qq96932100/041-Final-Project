@@ -1,5 +1,7 @@
 const search_bar_btn = document.getElementById('search_bar_btn');
-let url = "http://127.0.0.1:5500/django/sample/templates/index/?q=123&input=avasdemon"
+// let url = "http://127.0.0.1:5500/django/sample/templates/index/?q=123&input=avasdemon";
+const menu_bar_btn = document.getElementById('menu_button');
+let bool = 1;
 
 search_bar_btn.addEventListener('click', function () {
     if(get_input() != ''){
@@ -12,7 +14,6 @@ search_bar_btn.addEventListener('click', function () {
  
 function get_input() {
       let search_bar_input = document.getElementById("search_bar_input").value;
-      // document.getElementById("stock_number").innerHTML = search_bar_input.value;
       return search_bar_input;
   }
 
@@ -59,3 +60,44 @@ function send_data() {
   2) post請求參數放在send裡面，即請求體.
   */
 }
+
+menu_bar_btn.addEventListener('click', function () {
+  // myFunction();
+  bool = !bool;
+  if(bool){
+    openNav();
+  }else{
+    closeNav();
+  }
+  // reload();
+}, true);
+
+// function myFunction() {
+//   menu_bar_btn.classList.toggle("change");
+// }
+
+function openNav() {
+  menu = document.getElementsByClassName("menu")[0];
+  menu_btn = document.getElementById('menu_button');
+  // menu.style.visibility = "hidden";
+  menu.style.width = "0vw";
+  menu.style.opacity = 1;
+  // menu_btn.style.visibility = "visible";
+  menu.style.transition = "1s";
+  // menu_btn.style.opacity = 0;
+  // menu.style.visibility = "collapse";
+}
+
+function closeNav() {
+  menu = document.getElementsByClassName("menu")[0];
+  menu_btn = document.getElementById('menu_button');
+  // menu.style.visibility = "hidden";
+  menu.style.width = "0vw";
+  menu.style.opacity = 0;
+  // menu_btn.style.visibility = "visible";
+  menu.style.transition = "1s";
+  // menu_btn.style.opacity = 1;
+  // menu.style.visibility = "collapse";
+}
+
+// closeNav()

@@ -52,6 +52,7 @@ body{
     /* float:left; */
     margin: 0px auto;
     position: fixed;
+    z-index:3;
 }
 /*左側選單區塊*/
 nav{
@@ -153,6 +154,7 @@ nav a:active{
     justify-content: center;
     align-items: center;
     /* padding-left: 15vw; */
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.381);
 }
 #banner_title{
     margin: auto;

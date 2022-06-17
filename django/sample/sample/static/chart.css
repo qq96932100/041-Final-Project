@@ -1,0 +1,129 @@
+@import './reset.css';
+/* Color Set
+#564787
+#DBCBD8
+#F2FDFF
+#9AD4D6
+#101935
+ */
+
+body{
+    font-family:'微軟正黑體';
+}
+
+.menu{/*fixed*/
+    color: #101935;
+    height:100vh;
+    width: 10vw;
+    background-color: #6554A0;
+    float:left;
+    margin: 0 auto;
+    position: fixed;
+}
+#menu_button {
+    margin:auto;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change .bar2 {opacity: 0;}
+
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+.content{
+    width:100vw;
+    /* background-color: #F2FDFF; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner{/*fixed*/
+    background-color: #47AAAE;
+    color:#F2FDFF;
+    height:25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#banner_title{
+    margin: auto;
+    font-size: 5em;
+}
+
+nav{/*fixed*/
+    width: 10vw;
+    text-align: center;
+    font-size: 0;
+    position: fixed;
+    display: inline-block;
+}
+nav a{/* 選取器空格代表下一層 */
+
+    color: #F2FDFF;
+    text-decoration: none;
+    display: flex;
+    padding: 20px 60px 20px 60px;
+    font-size: 16px;
+    transition: 0.5s; /* transition效果展示至結束的秒數（延長）　*/
+    align-items: stretch flex-start flex-end center baseline;
+}
+nav a:hover{/* 碰到觸發條件 */
+    background-color: #564686;
+}
+nav a:active{/* 觸發條件會由上至下判斷，所以順序是有關係的 */
+    background-color: #3B315E;
+}
+
+.chart{
+    width: 100vw;
+    height: 75vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #1C2D5E;
+}
+#chart_date{
+    color:#F2FDFF;
+    height: 20%;
+    width: 100%;
+    margin:2vh;
+    font-size:2em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.date_input{
+    font-size: medium;
+}
+.chart_graphic{
+    width: 100%;
+    height:60%;
+    display:flex;
+    justify-content:space-evenly;
+}
+#chart_1{
+    width:auto;
+    height: 100%;
+}
+#chart_2{
+    width:auto;
+    height: 100%;
+}

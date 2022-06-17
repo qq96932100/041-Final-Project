@@ -17,7 +17,7 @@ stock_number = ['0050','2330','2884','1101','1102','2002','2412','2823','5880','
 # Create your views here.
 def sayhello(request):
     return HttpResponse("Hello")
-def templates(request):
+def index(request):
     now = datetime.now()
     return render(request,"Hello.html",locals())
 

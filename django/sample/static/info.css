@@ -1,0 +1,58 @@
+@import './reset.css';
+@import './main.css';
+/* Color Set
+#564787
+#DBCBD8
+#F2FDFF
+#9AD4D6
+#101935
+ */
+
+/* --右側內容-- */
+
+.content{
+    width:100vw;
+    height:100vh;
+    background-color: #F2FDFF;
+}
+
+.banner{/*右上區塊_banner*/
+    background-color: #47AAAE;
+    color:#F2FDFF;
+    height:25vh;
+    padding-left: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#banner_title{
+    margin: auto;
+    font-size: 4em;
+}
+
+.info{
+    background-color: #1C2D5E;
+    color:white;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+.support_stock{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding-left: 15vw;
+}
+#support_stock_title{
+    font-size: 2em;
+    padding: 1%;
+}
+.support_stock li{
+    padding: 5%;
+    width: 100%;
+}

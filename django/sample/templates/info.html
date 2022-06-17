@@ -8,55 +8,57 @@
 
 </head>
 <body>
-
-<div class="menu">
-    <nav>
-        <ul class="ul">
-            <li>
-                <div id="for_menu_title">
-                    <div id="menu_text">目錄</div>
-                    <div id="menu_button" onclick="myFunction(this)">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </div>
-                </div>
-            </li>
-            <li><a class="button" href="./index.html"><span>股票查詢系統</span></a></li>
-            <li><a class="button" href="./chart.html"><span>歷史走勢圖</span></a></li>
-            <li><a class="button" href="./info.html"><span>系統資訊</span></a></li>
-            <li><a class="button" href="./about_us.html"><span>關於我們</span></a></li>
-        </ul>
-    </nav>
+<div class="container">
+    <div class="left_container">
+        <div class="menu">
+            <nav>
+                <ul class="menu_ul">
+                    <li>
+                        <div id="for_menu_title">
+                            <div id="menu_text">目錄</div>
+                        </div>
+                    </li>
+                    <li><a class="button" href="./index.html"><span>股票查詢系統</span></a></li>
+                    <li><a class="button" href="./chart.html"><span>歷史走勢圖</span></a></li>
+                    <li><a class="button" href="./info.html"><span>系統資訊</span></a></li>
+                    <li><a class="button" href="./about_us.html"><span>關於我們</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="menu_button" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
 
     <script>
         function myFunction(x) {
-          x.classList.toggle("change");
+        x.classList.toggle("change");
         }
     </script>
-
-</div>
-<div calss="content">
-    <div class="banner">
-        <div id="banner_title">
-            041期末專題_台灣股票查詢系統
+    <div calss="content">
+        <div class="banner">
+            <div id="banner_title">
+                041期末專題_台灣股票查詢系統
+            </div>
         </div>
-    </div>
-    <div class="info">
-        <div class="support_stock">
-            <span id="support_stock_title">目前支援的股票&nbsp;:&nbsp;</span>
-            <ul>
-                <li>0050 元大台灣50</li>
-                    <li>2330 台積電</li>
-                    <li>2884 玉山金</li>
-                    <li>1101 台泥</li>
-                    <li>1102 亞泥</li>
-                    <li>2002 中鋼</li>
-                    <li>2412 中華電</li>
-                    <li>2823 中壽</li>
-                    <li>5880 合庫金 </li>
-                    <li>2892 第一金</li>
-            </ul>
+        <div class="info">
+            <div class="support_stock">
+                <span id="support_stock_title">目前支援的股票&nbsp;:&nbsp;</span>
+                <ul>
+                    <li>0050 元大台灣50</li>
+                        <li>2330 台積電</li>
+                        <li>2884 玉山金</li>
+                        <li>1101 台泥</li>
+                        <li>1102 亞泥</li>
+                        <li>2002 中鋼</li>
+                        <li>2412 中華電</li>
+                        <li>2823 中壽</li>
+                        <li>5880 合庫金 </li>
+                        <li>2892 第一金</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

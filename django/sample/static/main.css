@@ -16,43 +16,58 @@ body{
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
+}
 
-  .button span:after {
+.button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
-  }
+}
 
-  .button:hover span {
+.button:hover span {
     padding-right: 25px;
-  }
+}
 
-  .button:hover span:after {
+.button:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}
 
+
+.container{
+    position:relative;
+    height: 100vh;
+    width:100vw;
+}
 
 /*
 
 --左側選單--
 
 */
-
+.left_container{
+    display: flex;
+    flex-direction:row;
+    /* position:absolute; */
+    height: 100vh;
+    /* width: 15vw; */
+    z-index: 5;
+    position:fixed;
+}
 
 .menu{
+    /* position:absolute; */
+    /* z-index: 5; */
     color: #101935;
     height:100vh;
     width: 15vw;
     background-color: #335585;
     /* float:left; */
     margin: 0px auto;
-    position: fixed;
-    z-index:3;
+    /* position: fixed; */
 }
 /*左側選單區塊*/
 nav{
@@ -84,11 +99,11 @@ nav a:active{
 #for_menu_title{
     display: inline-flex;
     flex-direction: row;
-    width: 200%;
+    /* width: 200%; */
 }
 #menu_text{
     color:white;
-    width:100%;
+    width:15vw;
     height: auto;
     display: flex;
     justify-content: center;
@@ -100,11 +115,9 @@ nav a:active{
 }
 /*for左側選單的按*/
 #menu_button {
-    float: right;
-    top:0px;
-    width: 100%;
-    align-self:flex-start;
-    padding-left: 15px;
+    /* position: absolute; */
+    /* align-self:flex-start; */
+    padding-left: 5px;
 }
 .bar1, .bar2, .bar3 {
     width: 35px;
@@ -132,10 +145,15 @@ nav a:active{
 
 
 .content{
+    position: absolute;
     display:flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
     width:100vw;
     height:100vh;
-    background-color: #F2FDFF;
+    /* background-color: #F2FDFF; */
+    /* z-index: 3; */
 }
 
 
@@ -150,6 +168,7 @@ nav a:active{
     background-color: #29405a;
     color:#F2FDFF;
     height:25vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -58,7 +58,10 @@ def open_close_pic(input_num, begin_time, end_time):
     plt.plot(month,close,'o-',color = 'g', label="close")
     # 設定圖片標題，以及指定字型設定，x代表與圖案最左側的距離，y代表與圖片的距離
     plt.title("open-close line pic", x=0.5, y=1.03)
-    plt.xticks(fontsize=2)
+    plt.xticks(fontsize=7)
+    plt.xticks(rotation = 90)
+    ax = plt.gca()
+    ax.set_xticks(ax.get_xticks()[::3])
     plt.yticks(fontsize=10)
     plt.xlabel("month", fontsize=20, labelpad = 15)
     plt.ylabel("price", fontsize=20, labelpad = 20)

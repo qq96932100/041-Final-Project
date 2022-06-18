@@ -39,24 +39,12 @@
     height:80vh;
     width: 400px;
     height: 500px;
-    /* position: relative;*/
 }
 .info_card{
     background-color: #4774ae;
-    /* width:20%;
-    height:60%; */
-    /* width: 350px;
-    height: 450px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;  */
-
     position: absolute;
-    /* top: 50%;
-    left: 50%; */
     width: 350px;
     height: 450px;
-    /* transform: translate(-50%, -50%); */
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
@@ -76,10 +64,6 @@
 .profile_picture img{
     width: 100%;
 }
-.info_card:hover{
-    /* box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2); */
-
-}
 .info_card:hover .profile_picture{
     transform: translateY(-100px);
     transition: all .9s;
@@ -90,7 +74,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    /* background: #fff; */
     width: 100%;
     height: 18%;
     z-index: 1;
@@ -157,7 +140,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    /* background: #fff; */
     z-index: 1;
 }
 #heheboi{
@@ -177,23 +159,11 @@
 
 #test{
     background-color: #4774ae;
-    /* width:20%;
-    height:60%; */
-    /* width: 350px;
-    height: 450px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;  */
-
     position: absolute;
-    /* top: 50%;
-    left: 50%; */
     width: 350px;
     height: 450px;
-    /* transform: translate(-50%, -50%); */
     border-radius: 16px;
     overflow: hidden;
-    /* box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6); */
     cursor: pointer;
     transition: 0.5s;
 }

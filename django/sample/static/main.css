@@ -51,23 +51,17 @@ body{
 .left_container{
     display: flex;
     flex-direction:row;
-    /* position:absolute; */
     height: 100vh;
-    /* width: 15vw; */
     z-index: 5;
     position:fixed;
 }
 
 .menu{
-    /* position:absolute; */
-    /* z-index: 5; */
     color: #101935;
     height:100vh;
     width: 15vw;
     background-color: #335585;
-    /* float:left; */
     margin: 0px auto;
-    /* position: fixed; */
 }
 /*左側選單區塊*/
 nav{
@@ -344,4 +338,7 @@ nav a:active{
     display:flex;
     justify-content: center;
     align-items: center;
+}
+#stock_table{
+    width: 80%;
 }

@@ -36,6 +36,25 @@ def open_close_pic(input_num, begin_time, end_time):
     plt.ylabel("price", fontsize=20, labelpad = 20)
     plt.legend(loc = "best", fontsize=5)
     plt.show()
+    figure= go.Figure(
+    data=[
+        go.Candlestick(
+            x=df['Date'],
+            open=df['Open'],
+            high=df['High'],
+            low=df['Low'],
+            close=df['Close'],
+            increasing_line_color='red',
+            decreasing_line_color='green'
+            )
+        ]
+    )
+    figure.update_layout(
+        title=input_num,
+        xaxis_title='Date',
+        yaxis_title='Price',
+    )
+    figure.show()
 #自製資料
 input_num = str(input("Enter a stock number:"))
 begin_time = str(input("Enter begin time (e.g. 2021-06):"))

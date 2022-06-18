@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=0">
+    <title>MangoPP</title>
+    <link rel="stylesheet" href="../static/about_us.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="left_container">
+        <div class="menu">
+            <nav>
+                <ul class="menu_ul">
+                    <li>
+                        <div id="for_menu_title">
+                            <div id="menu_text">目錄</div>
+                        </div>
+                    </li>
+                    <li><a class="button" href="./index.html"><span>股票查詢系統</span></a></li>
+                    <li><a class="button" href="./chart.html"><span>歷史走勢圖</span></a></li>
+                    <li><a class="button" href="./info.html"><span>系統資訊</span></a></li>
+                    <li><a class="button" href="./about_us.html"><span>關於我們</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="menu_button" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+
+    <div calss="content">
+
+        <div class="banner">
+            <div id="banner_title">
+                041期末專題_台灣股票查詢系統
+            </div>
+        </div>
+
+        <div class="about_us">
+            <div class="row">
+
+                <div class="card_wrapper">
+                    <div class="info_card">
+                        <div class="profile_picture">
+                            <img src="../static/image/jimbo.jpeg">
+                            <span class="stu_id">B0943036 曾靖諺</span>
+                        </div>
+                        <div class="details">
+                            <h2 class="details_name">Shaber
+                                <br>
+                                <span class="job_title">Front-end</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card_wrapper">
+                    <div class="info_card">
+                        <div class="profile_picture">
+                            <img src="../static/image/水餃.jpg">
+                            <span class="stu_id">B0943017 簡名駿</span>
+                        </div>
+                        <div class="details">
+                            <h2 class="details_name">水餃
+                                <br>
+                                <span class="job_title">Front-end</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card_wrapper">
+                    <div class="info_card">
+                        <div class="profile_picture">
+                            <img src="../static/image/喜多2.jpg">
+                            <span class="stu_id">B0943028 曾哲禹</span>
+                        </div>
+                        <div class="details">
+                            <h2 class="details_name">喜多
+                                <br>
+                                <span class="job_title">back-end</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="card_wrapper">
+                    <div class="info_card">
+                        <div class="profile_picture">
+                            <img src="../static/image/信德.jpg">
+                            <span class="stu_id">B0943027 黃晉晟</span>
+                        </div>
+                        <div class="details">
+                            <h2 class="details_name">雞折
+                                <br>
+                                <span class="job_title">Back-end</span>
+
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card_wrapper">
+                    <div class="info_card">
+                        <div class="profile_picture">
+                            <img src="../static/image/鹿其.jpg">
+                            <span class="stu_id">B0943038 許顯麒</span>
+                        </div>
+                        <div class="details">
+                            <h2 class="details_name">鹿其
+                                <br>
+                                <span class="job_title">API</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="card_wrapper">
+                    <div id="test">
+                        <div id="heheboi">
+                            <img src="../static/image/antihorny.png">
+                        </div>
+                        <div id="hehe">
+                            <video id="forvideo" src="../static/image/icecream.mp4" preload></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="surprise"><span id="surprise_text">智障互助會<br>沒有智障</span></div>
+
+        </div>
+    </div>
+</div>
+<script>
+    var $playvideo = $('#forvideo');
+    $playvideo.on('mouseenter',function(){
+        $playvideo.get(0).play();
+    });
+    $playvideo.on('mouseout',function(){
+        $playvideo.get(0).pause();
+    });
+    function myFunction(x) {
+    x.classList.toggle("change");
+    }
+</script>
+<script src = "../static/js/btn.js"></script>
+</body>
+</html>

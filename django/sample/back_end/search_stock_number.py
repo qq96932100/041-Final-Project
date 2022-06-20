@@ -2,13 +2,14 @@ from re import X
 import sqlite3
 import pandas as pd
 import twstock
+import os
 
 stock_number = ['0050','2330','2884','1101','1102','2002','2412','2823','5880','2892']
 
 def search_stock(input_num, begin_time, end_time): 
     for i in range (0, len(stock_number)):
         if(input_num == stock_number[i]):
-            conn = sqlite3.connect('D:/041final_project/041-Final-Project/django/sample/back_end/all_stockDB/stock_'+input_num+'.db')
+            conn = sqlite3.connect('C:\041-Final-Project\django\sample\back_end\all_stockDB\stock_'+input_num+'.db')
             df = pd.read_sql('SELECT * FROM stock_'+input_num+' WHERE (Date >= \'{}-01\' AND Date < \'{}-01\')'
                 .format(begin_time,end_time), conn),
             print(df)

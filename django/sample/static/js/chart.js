@@ -6,17 +6,19 @@ chart_date_btn.addEventListener('click', function () {
   
   if(begin_date != '' & end_date != ''){ //避免空值error
         console.log('begin_date='+begin_date + ', end_date=' + end_date);
-        set_chart(chart_1='dumplings.jpg', chart_2='dumplings.jpg'); //這裡輸入圖表檔名
+        console.log("suscces")
+        set_chart(chart_1='trend.jpg', chart_2='kline.jpg'); //這裡輸入圖表檔名
         send_data();
     }
     // reload();
   }, true);
 
 function get_input() {
+        // let search_bar_input = document.getElementById("search_bar_input").value;
         let begin_date = document.getElementById("begin_date").value;
         let end_date =  document.getElementById("end_date").value;
         // document.getElementById("stock_number").innerHTML = search_bar_input.value;
-        return [begin_date, end_date]; // 我是數組
+        return [search_bar_input,begin_date, end_date]; // 我是數組
     }
 
 function set_chart(chart_1, chart_2) {

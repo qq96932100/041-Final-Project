@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from sampleApp.views import Kline_pic, open_close_pic, sayhello, stock_realtime_search,templates
+from sampleApp.views import stock_realtime_search,index,chart,info,about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/',sayhello),
-    path('templates/',templates),
+    path('',index),
     path('stock_search/', stock_realtime_search),
-    path('open_close_pic/', open_close_pic),
-    path('Kline_pic/', Kline_pic),
+    path('chart/',chart),
+    path('info/',info),
+    path('about_us/',about),
 ]

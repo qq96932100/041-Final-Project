@@ -7,7 +7,8 @@ search_bar_btn.addEventListener('click', function () {
     if(get_input() != ''){
       set_stock_number();
       send_data();
-      console.log('par:' + url.search());
+
+      // console.log('par:' + url.search());
     }
     // reload();
   }, true);
@@ -45,8 +46,9 @@ function send_data() {
   */
 
   // get方式：
-  xhr.open('GET', location + '?input='+ get_input());
-  xhr.send();
+  // xhr.open('GET', location + 'stock_search/?input='+ get_input());
+  // xhr.send();
+  window.location.href=location + 'stock_search/?input='+ get_input();
 
   // POST方式
   // xhr.open('POST', "/articles/" + article_id + "/likes/");

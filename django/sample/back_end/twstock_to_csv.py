@@ -3,12 +3,12 @@ import pandas as pd
 
 def csv_make2021(target_price,i,j):
     df = pd.DataFrame(columns=name_attribute, data=target_price)
-    filename = f'C:/Users/xido5/Desktop/back_end/'+all[j]+' 2021 '+str(i)+'月.csv'
+    filename = f'C:\041-Final-Project\django\sample\back_end\\'+all[j]+' 2021 '+str(i)+'月.csv'
     df.to_csv(filename)
     
 def csv_make2022(target_price,i,j):
     df = pd.DataFrame(columns=name_attribute, data=target_price)
-    filename = f'C:/Users/xido5/Desktop/back_end/'+all[j]+' 2022 '+str(i)+'月.csv'
+    filename = f'C:\041-Final-Project\django\sample\back_end\\'+all[j]+' 2022 '+str(i)+'月.csv'
     df.to_csv(filename)
 
 def all_stock(target,j):

@@ -22,8 +22,9 @@ def index(request):
 #即時查詢股票資訊
 def stock_realtime_search(request):
     data = request.GET.get('input')
-    # print(data)
+    print(data)
     ts = twstock.realtime.get(data)
+    print(ts)
     #以下整理成json
     tsinfo = ts['info']
     stock_number = tsinfo['code']

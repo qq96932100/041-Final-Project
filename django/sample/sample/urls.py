@@ -20,7 +20,7 @@ from sampleApp.views import stock_realtime_search,index,chart,info,about
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),
-    path('stock_search/', stock_realtime_search),
+    path('stock_search', stock_realtime_search),
     path('chart/',chart),
     path('info/',info),
     path('about_us/',about),

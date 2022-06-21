@@ -48,8 +48,8 @@ function send_data() {
   // get方式：
   // xhr.open('GET', location + 'stock_search/?input='+ get_input());
   // xhr.send();
-  window.location.href=location + 'stock_search/?input='+ get_input();
-
+  window.location.href = location.origin + '/stock_search?input='+ get_input();
+  console.log(window.location.href);
   // POST方式
   // xhr.open('POST', "/articles/" + article_id + "/likes/");
   // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8"); //必須寫在open和send中間

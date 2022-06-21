@@ -45,58 +45,58 @@ def stock_realtime_search(request):
     stock_low = tsrt['low']
     # data = request.POST.get()
 
-    return render(request,"search.html",locals())#自填html檔名
+    return render(request,"index.html",locals())#自填html檔名
 
 #繪製開盤收盤圖
 def open_close_pic(input_num, begin_time, end_time):
     #從資料庫抓資料
     print("suscces")
     for i in range (0, len(stock_number)):
-            if(input_num == stock_number[i]):
-                # conn = sqlite3.connect('C:\041-Final-Project\django\sample\back_end\all_stockDB\stock_'+input_num+'.db')
-                conn = sqlite3.connect('C:/041-Final-Project/django/sample/back_end/all_stockDB/stock_'+input_num+'.db')
-                df = pd.read_sql('SELECT * FROM stock_'+input_num+' WHERE (Date >= \'{}-01\' AND Date < \'{}-01\')'
-                    .format(begin_time,end_time), conn)
-    month = df['Date']#X軸
-    open = df['Open']#第一條線的資料
-    close = df['Close']#第二條線的資料
-    print(month,open,close)
-    plt.figure(figsize=(15,10),dpi=100,linewidth = 2)
-    plt.plot(month,open,'s-',color = 'r', label="open")
-    plt.plot(month,close,'o-',color = 'g', label="close")
-    # 設定圖片標題，以及指定字型設定，x代表與圖案最左側的距離，y代表與圖片的距離
-    plt.title("open-close line pic", x=0.5, y=1.03)
-    plt.xticks(fontsize=7)
-    plt.xticks(rotation = 90)
-    ax = plt.gca()
-    ax.set_xticks(ax.get_xticks()[::3])
-    plt.yticks(fontsize=10)
-    plt.xlabel("month", fontsize=20, labelpad = 15)
-    plt.ylabel("price", fontsize=20, labelpad = 20)
-    plt.legend(loc = "best", fontsize=5)
-    plt.savefig('C:\041-Final-Project\django\sample\static\trend.jpg')
-    plt.show()
+        if(input_num == stock_number[i]):
+            print("found!",stock_number[i])
+            # conn = sqlite3.connect('C:\041-Final-Project\django\sample\back_end\all_stockDB\stock_'+input_num+'.db')
+            conn = sqlite3.connect('../sample/back_end/all_stockDB/stock_'+input_num+'.db')
+            df = pd.read_sql('SELECT * FROM stock_'+input_num+' WHERE (Date >= \'{}-01\' AND Date < \'{}-01\')'
+                .format(begin_time,end_time), conn)
+            month = df['Date']#X軸
+            open = df['Open']#第一條線的資料
+            close = df['Close']#第二條線的資料
+            print(month,open,close)
+            plt.figure(figsize=(15,10),dpi=100,linewidth = 2)
+            plt.plot(month,open,'s-',color = 'r', label="open")
+            plt.plot(month,close,'o-',color = 'g', label="close")
+            # 設定圖片標題，以及指定字型設定，x代表與圖案最左側的距離，y代表與圖片的距離
+            plt.title("open-close line pic", x=0.5, y=1.03)
+            plt.xticks(fontsize=7)
+            plt.xticks(rotation = 90)
+            ax = plt.gca()
+            ax.set_xticks(ax.get_xticks()[::3])
+            plt.yticks(fontsize=10)
+            plt.xlabel("month", fontsize=20, labelpad = 15)
+            plt.ylabel("price", fontsize=20, labelpad = 20)
+            plt.legend(loc = "best", fontsize=5)
+            plt.savefig('../sample/static/trend.jpg')
 
-    figure= go.Figure(
-    data=[
-        go.Candlestick(
-            x=df['Date'],
-            open=df['Open'],
-            high=df['High'],
-            low=df['Low'],
-            close=df['Close'],
-            increasing_line_color='red',
-            decreasing_line_color='green'
+            figure= go.Figure(
+            data=[
+                go.Candlestick(
+                    x=df['Date'],
+                    open=df['Open'],
+                    high=df['High'],
+                    low=df['Low'],
+                    close=df['Close'],
+                    increasing_line_color='red',
+                    decreasing_line_color='green'
+                    )
+                ]
             )
-        ]
-    )
-    figure.update_layout(
-        title=input_num,
-        xaxis_title='Date',
-        yaxis_title='Price',
-    )
-    plt.savefig('C:\041-Final-Project\django\sample\static\kline.jpg')
-    figure.show()
+            figure.update_layout(
+                title=input_num,
+                xaxis_title='Date',
+                yaxis_title='Price',
+            )
+            plt.savefig('../sample/static/kline.jpg')
+            figure.show()
     return 
 
 def info(request):
@@ -106,4 +106,10 @@ def about(request):
     return render(request,"about_us.html",locals())
 
 def chart(request):
-    return render(request,"chart.html",locals())
+    input_num = request.GET.get('input_num')
+    begin_date = request.GET.get('begin_date')
+    end_date = request.GET.get('end_date')    
+    if(type(input_num) != 'NoneType' and type(begin_date) != 'NoneType' and type(end_date) != 'NoneType'):
+        print('input_num:', input_num, ', begin_date:', begin_date, ', end_date:', end_date)
+        open_close_pic(input_num, begin_date, end_date)
+    return render(request, "chart.html", locals())

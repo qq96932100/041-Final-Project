@@ -1,20 +1,22 @@
-const chart_date_btn = document.getElementById('chart_date_btn');
+const search_bar_btn = document.getElementById('search_bar_btn');
+// const search_bar_btn = document.getElementById('search_bar_btn');
 
-chart_date_btn.addEventListener('click', function () {
-  let begin_date = get_input()[0];
-  let end_date = get_input()[1];
+search_bar_btn.addEventListener('click', function () {
+  let search_bar_input = get_input()[0];
+  let begin_date = get_input()[1];
+  let end_date = get_input()[2];
   
-  if(begin_date != '' & end_date != ''){ //避免空值error
+  if(search_bar_input != '' & begin_date != '' & end_date != ''){ //避免空值error
         console.log('begin_date='+begin_date + ', end_date=' + end_date);
         console.log("suscces")
-        set_chart(chart_1='trend.jpg', chart_2='kline.jpg'); //這裡輸入圖表檔名
+        set_chart('trend.jpg', 'kline.jpg'); //這裡輸入圖表檔名
         send_data();
     }
     // reload();
   }, true);
 
 function get_input() {
-        // let search_bar_input = document.getElementById("search_bar_input").value;
+        let search_bar_input = document.getElementById("search_bar_input").value;
         let begin_date = document.getElementById("begin_date").value;
         let end_date =  document.getElementById("end_date").value;
         // document.getElementById("stock_number").innerHTML = search_bar_input.value;
@@ -46,8 +48,8 @@ function send_data() {
       */
     
       // get方式：
-      let dates = get_input();
-      xhr.open('GET', location + '?begin_date='+ dates[0] + '&end_date=' + dates[1]);
+      let data = get_input();
+      xhr.open('GET', location + '?input_num=' + data[0] + '&begin_date='+ data[1] + '&end_date=' + data[2]);
       xhr.send();
     
       // POST方式

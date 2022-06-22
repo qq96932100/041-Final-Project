@@ -18,7 +18,7 @@ def open_close_pic(input_num, begin_time, end_time):
     for i in range (0, len(stock_number)):
             if(input_num == stock_number[i]):
                 # conn = sqlite3.connect('C:\041-Final-Project\django\sample\back_end\all_stockDB\stock_'+input_num+'.db')
-                conn = sqlite3.connect('C:/041-Final-Project/django/sample/back_end/all_stockDB/stock_0050.db')
+                conn = sqlite3.connect('D:/041final_project/041-Final-Project/django/sample/back_end/all_stockDB/stock_'+input_num+'.db')
                 df = pd.read_sql('SELECT * FROM stock_'+input_num+' WHERE (Date >= \'{}-01\' AND Date < \'{}-01\')'
                     .format(begin_time,end_time), conn)
     month = df['Date']#X軸
@@ -57,6 +57,7 @@ def open_close_pic(input_num, begin_time, end_time):
         yaxis_title='Price',
     )
     figure.show()
+       
 #自製資料
 input_num = str(input("Enter a stock number:"))
 begin_time = str(input("Enter begin time (e.g. 2021-06):"))

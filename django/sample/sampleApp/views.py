@@ -95,8 +95,9 @@ def open_close_pic(input_num, begin_time, end_time):
                 xaxis_title='Date',
                 yaxis_title='Price',
             )
-            plt.savefig('../sample/static/kline.jpg')
-            figure.show()
+            figure.write_image("../sample/static/kline.jpg", width=1500, height=1000)
+            # plt.savefig('../sample/static/kline.jpg')
+            # figure.show()
     return 
 
 def info(request):

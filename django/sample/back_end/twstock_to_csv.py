@@ -3,12 +3,12 @@ import pandas as pd
 
 def csv_make2021(target_price,i,j):
     df = pd.DataFrame(columns=name_attribute, data=target_price)
-    filename = f'C:\041-Final-Project\django\sample\back_end\\'+all[j]+' 2021 '+str(i)+'月.csv'
+    filename = f'D:/Github/041-Final-Project/django/sample/back_end/2303/'+all[j]+' 2021 '+str(i)+'月.csv'
     df.to_csv(filename)
     
 def csv_make2022(target_price,i,j):
     df = pd.DataFrame(columns=name_attribute, data=target_price)
-    filename = f'C:\041-Final-Project\django\sample\back_end\\'+all[j]+' 2022 '+str(i)+'月.csv'
+    filename = f'D:/Github/041-Final-Project/django/sample/back_end/2303/'+all[j]+' 2022 '+str(i)+'月.csv'
     df.to_csv(filename)
 
 def all_stock(target,j):
@@ -21,16 +21,16 @@ def all_stock(target,j):
         csv_make2022(target_price,i,j)
         print(i)
 
-all=["0050","2330","2884","1101","1102","2002","2412","2823","5880","2892"]
+all=["0050","2330","2884","1101","1102","2002","2412","2303","5880","2892"]
 
 name_attribute = [
         'Date', 'Capacity', 'Turnover', 'Open', 'High', 'Low', 'Close', 'Change',
         'Transcation'
         ]
 
-for j in range(2,10):
-    target = twstock.Stock(all[j])
-    all_stock(target,j)
+
+target = twstock.Stock(all[7])
+all_stock(target,7)
 
 
 

@@ -11,6 +11,8 @@ from re import X
 import sqlite3
 import pandas as pd
 import json
+import os
+
 
 
 stock_number = ['0050','2330','2884','1101','1102','2002','2412','2823','5880','2892']
@@ -65,6 +67,8 @@ def open_close_pic(input_num, begin_time, end_time):
             plt.figure(figsize=(15,10),dpi=100,linewidth = 2)
             plt.plot(month,open,'s-',color = 'r', label="open")
             plt.plot(month,close,'o-',color = 'g', label="close")
+            fileTrend = '../sample/static/trend.jpg'
+            os.remove(fileTrend)
             # 設定圖片標題，以及指定字型設定，x代表與圖案最左側的距離，y代表與圖片的距離
             plt.title("open-close line pic", x=0.5, y=1.03)
             plt.xticks(fontsize=7)
@@ -76,6 +80,8 @@ def open_close_pic(input_num, begin_time, end_time):
             plt.ylabel("price", fontsize=20, labelpad = 20)
             plt.legend(loc = "best", fontsize=5)
             plt.savefig('../sample/static/trend.jpg')
+
+
 
             figure= go.Figure(
             data=[
@@ -95,6 +101,8 @@ def open_close_pic(input_num, begin_time, end_time):
                 xaxis_title='Date',
                 yaxis_title='Price',
             )
+            fileKline = '../sample/static/kline.jpg'
+            os.remove(fileKline)
             figure.write_image("../sample/static/kline.jpg", width=1500, height=1000)
             # plt.savefig('../sample/static/kline.jpg')
             # figure.show()

@@ -6,17 +6,17 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 import mplfinance as mpf
 import plotly.graph_objects as go
-import plotly.io as pio
 import pandas as pd
 from re import X
 import sqlite3
 import pandas as pd
 import json
 import os
+import plotly.io as io
 
 
 
-stock_number = ['0050','2330','2884','1101','1102','2002','2412','2823','5880','2892']
+stock_number = ['0050','2330','2884','1101','1102','2002','2412','2303','5880','2892']
 
 # Create your views here.
 def index(request):
@@ -61,17 +61,21 @@ def open_close_pic(input_num, begin_time, end_time):
             conn = sqlite3.connect('../sample/back_end/all_stockDB/stock_'+input_num+'.db')
             df = pd.read_sql('SELECT * FROM stock_'+input_num+' WHERE (Date >= \'{}-01\' AND Date < \'{}-01\')'
                 .format(begin_time,end_time), conn)
-
             month = df['Date']#X軸
             open = df['Open']#第一條線的資料
             close = df['Close']#第二條線的資料
             print(month,open,close)
-
             plt.figure(figsize=(15,10),dpi=100,linewidth = 2)
             plt.plot(month,open,'s-',color = 'r', label="open")
             plt.plot(month,close,'o-',color = 'g', label="close")
-            # fileTrend = '../sample/static/trend.jpg'
-            # os.remove(fileTrend)
+            fileTrend = '../sample/static/trend.jpg'
+           
+            if(os.path.isfile(fileTrend)):
+                os.remove(fileTrend)
+                print('exist')
+            else:
+                print('not exist')
+            
             # 設定圖片標題，以及指定字型設定，x代表與圖案最左側的距離，y代表與圖片的距離
             plt.title("open-close line pic", x=0.5, y=1.03)
             plt.xticks(fontsize=7)
@@ -82,10 +86,11 @@ def open_close_pic(input_num, begin_time, end_time):
             plt.xlabel("month", fontsize=20, labelpad = 15)
             plt.ylabel("price", fontsize=20, labelpad = 20)
             plt.legend(loc = "best", fontsize=5)
-            plt.savefig('../sample/static/image/trend.jpg')
-            
+            plt.savefig('../sample/static/trend.jpg')
 
-            figure = go.Figure(
+
+
+            figure= go.Figure(
             data=[
                 go.Candlestick(
                     x=df['Date'],
@@ -94,22 +99,25 @@ def open_close_pic(input_num, begin_time, end_time):
                     low=df['Low'],
                     close=df['Close'],
                     increasing_line_color='red',
-                    decreasing_line_color='green')
+                    decreasing_line_color='green'
+                    )
                 ]
             )
             figure.update_layout(
                 title=input_num,
                 xaxis_title='Date',
-                yaxis_title='Price'
+                yaxis_title='Price',
             )
-            # fileKline = '../sample/static/kline.jpg'
-            # os.remove(fileKline)
-            print('here')
-            # figure.show()
-            # figure.write_image("../sample/static/image/kline.jpg", width=1500, height=1000)
-            pio.write_image(figure, 'kline.jpg')
+            fileKline = '../sample/static/kline.jpg'
+            print(os.path.isfile(fileKline))
+            if(os.path.isfile(fileKline)):
+                os.remove(fileKline)
+                print('exist')
+            else:
+                print('not exist')
+            figure.write_image("../sample/static/kline.jpg", width=1500, height=1000)
             # plt.savefig('../sample/static/kline.jpg')
-            
+            # figure.show()
     return 
 
 def info(request):

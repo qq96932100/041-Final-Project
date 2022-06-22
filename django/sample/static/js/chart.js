@@ -24,8 +24,8 @@ function get_input() {
     }
 
 function set_chart(chart_1, chart_2) {
-        document.getElementById("chart_1").src = "../static/image/" + chart_1;
-        document.getElementById("chart_2").src = "../static/image/" + chart_2;
+        document.getElementById("chart_1").src = "../static/" + chart_1;
+        document.getElementById("chart_2").src = "../static/" + chart_2;
     }
 
 function send_data() {

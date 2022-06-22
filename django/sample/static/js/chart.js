@@ -24,8 +24,8 @@ function get_input() {
     }
 
 function set_chart(chart_1, chart_2) {
-        document.getElementById("chart_1").src = "../static/" + chart_1;
-        document.getElementById("chart_2").src = "../static/" + chart_2;
+        document.getElementById("chart_1").src = "../static/image/" + chart_1;
+        document.getElementById("chart_2").src = "../static/image/" + chart_2;
     }
 
 function send_data() {
@@ -49,7 +49,7 @@ function send_data() {
     
       // get方式：
       let data = get_input();
-      xhr.open('GET', location + '?input_num=' + data[0] + '&begin_date='+ data[1] + '&end_date=' + data[2]);
+      xhr.open('GET', location + '?input_num=' + data[0] + '&begin_date='+ data[1] + '&end_date=' + data[2] + '&t=' + Date.now());
       xhr.send();
     
       // POST方式

@@ -145,7 +145,7 @@ nav a:active{
     top: 0;
     left: 0;
     width:100vw;
-    height:100vh;
+    height:160vh;
     /* background-color: #F2FDFF; */
     /* z-index: 3; */
 }
@@ -207,7 +207,7 @@ nav a:active{
 }
 .search_bar_label {
     position: absolute;
-    top: 32%;
+    top: 25%;
     color: rgba(255, 255, 255, .5);
     font: 400 20px Arial;
     cursor: text;
@@ -217,12 +217,12 @@ nav a:active{
     outline: none;
 }
 #search_bar_input:focus ~ label {
-    top: 29.5%;
+    top: 23.5%;
     font: 400 15px Arial;
     color: #61b1f3;
 }
 #search_bar_input:valid ~ label {
-    top: 29.5%;
+    top: 23.5%;
     font: 400 15px Arial;
     color: #559b92;
 }
@@ -292,7 +292,7 @@ nav a:active{
     color:#F2FDFF;
     background-color: #2c486d;
     display: flex;
-    height:75vh;
+    height:135vh;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
@@ -336,9 +336,27 @@ nav a:active{
 .stock_market_info{
     font-size: 1.5em;
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
 #stock_table{
-    width: 80%;
+    width: 100%;
+}
+td{
+    padding:5% 0 5% 0;
+    max-width: 10%;
+}
+#buttom_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+#buttom_row div{
+    display: flex;
+
+    /* flex-direction: row; */
+    flex-wrap: nowrap;
 }

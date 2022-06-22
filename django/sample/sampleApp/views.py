@@ -51,7 +51,7 @@ def stock_realtime_search(request):
     return render(request,"index.html",locals())#自填html檔名
 
 #繪製開盤收盤圖
-def open_close_pic(input_num, begin_time, end_time):
+def open_close_pic(input_num, begin_time, end_time, time):
     #從資料庫抓資料
     print("suscces")
     for i in range (0, len(stock_number)):
@@ -88,8 +88,6 @@ def open_close_pic(input_num, begin_time, end_time):
             plt.legend(loc = "best", fontsize=5)
             plt.savefig('../sample/static/trend.jpg')
 
-
-
             figure= go.Figure(
             data=[
                 go.Candlestick(
@@ -118,7 +116,6 @@ def open_close_pic(input_num, begin_time, end_time):
             figure.write_image("../sample/static/kline.jpg", width=1500, height=1000)
             # plt.savefig('../sample/static/kline.jpg')
             # figure.show()
-    return 
 
 def info(request):
     return render(request,"info.html",locals())
@@ -129,8 +126,10 @@ def about(request):
 def chart(request):
     input_num = request.GET.get('input_num')
     begin_date = request.GET.get('begin_date')
-    end_date = request.GET.get('end_date')    
+    end_date = request.GET.get('end_date')
+    time = request.GET.get('t')   
+
     if(type(input_num) != 'NoneType' and type(begin_date) != 'NoneType' and type(end_date) != 'NoneType'):
-        print('input_num:', input_num, ', begin_date:', begin_date, ', end_date:', end_date)
-        open_close_pic(input_num, begin_date, end_date)
+        print('input_num:', input_num, ', begin_date:', begin_date, ', end_date:', end_date,', t:', time)
+        open_close_pic(input_num, begin_date, end_date, time)
     return render(request, "chart.html", locals())

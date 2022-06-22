@@ -15,6 +15,10 @@ search_bar_btn.addEventListener('click', function () {
     // reload();
   }, true);
 
+function reload() {
+  location.reload()
+}
+
 function get_input() {
         let search_bar_input = document.getElementById("search_bar_input").value;
         let begin_date = document.getElementById("begin_date").value;
@@ -50,6 +54,8 @@ function send_data() {
       // get方式：
       let data = get_input();
       xhr.open('GET', location + '?input_num=' + data[0] + '&begin_date='+ data[1] + '&end_date=' + data[2] + '&t=' + Date.now());
+      // via Cache-Control header:
+      xhr.setRequestHeader("Cache-Control", "no-cache");
       xhr.send();
     
       // POST方式

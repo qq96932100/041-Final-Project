@@ -41,7 +41,7 @@
     <div class="content">
         <div class="banner">
             <div id="banner_title">
-                041期末專題_台灣股票查詢系統
+                程式語言期末專題_台灣股票查詢系統
             </div>
         </div>
 
@@ -53,20 +53,19 @@
                     <div class="bar"></div> -->
                     <form action="/stock_search/" method="post">
                         <input id="search_bar_input" type="text" required="required"/>
+                        <label class="search_bar_label" for="search_bar_input">股票名稱/代號</label>
+                        <div class="bar"></div>
                     </form>
-                    <label class="search_bar_label" for="search_bar_input">股票名稱/代號</label>
-                    <div class="bar"></div>
-                </form>
                 </div>
                 <button id="search_bar_btn" type="button" >Search</button>
             </div>
 
             <div class="stock_info">
                 <div id="stock_info_upper">
-                    <div id="stock_name">{{stock_name}}</div>
+                    <div id="stock_name">{{stock_name|default:"股票名稱"}}</div>
                     <div class="stock_info_right">
-                        <div id="stock_number">{{stock_number}}</div>
-                        <div id="stock_fullname">{{stock_fullname}}</div>
+                        <div id="stock_number">{{stock_number|default:"股票代號"}}</div>
+                        <div id="stock_fullname">{{stock_fullname|default:"股票全名"}}</div>
                     </div>
                 </div>
 
@@ -74,28 +73,32 @@
                 <div class="stock_market_info">
                     <table id="stock_table">
                         <tr>
-                            <td colspan="2"><div id="stock_time">{{stock_time_clock}}</div></td>
+                            <td colspan="2"><div id="stock_time">{{stock_time_clock|default:"HH:MM:SS"}}</div></td>
                             <td><div>最佳買入價</div></td>
                             <td><div id="best_bid_price">{{stock_best_bid_price}}</div></td>
                             <td><div>最佳賣出價</div></td>
                             <td><div id="best_ask_price">{{stock_best_ask_price}}</div></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><div id="stock_time"> {{stock_time_day}}</div></td>
+                            <td colspan="2"><div id="stock_time"> {{stock_time_day|default:"YYYY-MM-DD"}}</div></td>
                             <td><div>最佳買入量</div></td>
                             <td><div id="best_bid_volume">{{stock_best_bid_volume}}</div></td>
                             <td><div>最佳賣出量</div></td>
                             <td><div id="best_bid_volume">{{stock_best_ask_volume}}</div></td>
                         </tr>
-                        <tr>
-                            <td><div >開盤價</div></td>
-                            <td><div  id="opening_price">{{stock_open}}</div></td>
-                            <td><div >最高價</div></td>
-                            <td><div  id="highest_price">{{stock_high}}</div></td>
-                            <td><div >最低價</div></td>
-                            <td><div  id="lowest_price">{{stock_low}}</div></td>
-                        </tr>
                     </table>
+                        <div id="buttom_row">
+                            <div >開盤價&emsp;
+                            <div  id="opening_price">{{stock_open}}</div>
+                            </div>
+                            <div >最高價&emsp;
+                            <div  id="highest_price">{{stock_high}}</div>
+                            </div>
+                            <div >最低價&emsp;
+                            <div  id="lowest_price">{{stock_low}}</div>
+                            </div>
+                        </tr>
+                        </div>
                 </div>
             </div>
         </div>

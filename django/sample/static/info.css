@@ -1,12 +1,6 @@
 @import './reset.css';
 @import './main.css';
-/* Color Set
-#564787
-#DBCBD8
-#F2FDFF
-#9AD4D6
-#101935
- */
+/*Color Set #564787 #DBCBD8 #F2FDFF #9AD4D6 #101935*/
 
 /* --右側內容-- */
 
@@ -43,9 +37,6 @@
    flex-direction: column;
    justify-content: space-evenly;
    align-items: center;
-   /*width: 100%; */
-   /* padding-left: 15vw; */
-
    background-color: #4774ae;
    position: absolute;
    width: 350px;

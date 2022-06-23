@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="left_container">
+    <div class="left_container"><!--左側選單-->
         <div class="menu">
             <nav>
                 <ul class="menu_ul">
@@ -25,44 +25,33 @@
                 </ul>
             </nav>
         </div>
-        <div id="menu_button">
+        <div id="menu_button" class="change"><!--選單按鈕-->
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
     </div>
 
-    <!-- <script>
-        function myFunction(x) {
-            x.classList.toggle("change");
-        }
-    </script> -->
-
-    <div class="content">
-        <div class="banner">
+    <div class="content"><!--顯示內容的區塊，內有分出更細的區塊-->
+        <div class="banner"><!--最上方Title-->
             <div id="banner_title">
                 程式語言期末專題_台灣股票查詢系統
             </div>
         </div>
 
         <div class="stock">
-            <div class="search_bar_block">
+            <div class="search_bar_block"><!--中間的搜尋欄-->
                 <div class="search_bar">
-                    <!-- <input id="search_bar_input"  type="text" required="required"/>
-                    <label class="search_bar_label" for="search_bar_input">股票名稱/代號</label>
-                    <div class="bar"></div> -->
-                    <form action="/stock_search/" method="post">
-                        <input id="search_bar_input" type="text" required="required"/>
-                        <label class="search_bar_label" for="search_bar_input">股票名稱/代號</label>
-                        <div class="bar"></div>
-                    </form>
+                    <input id="search_bar_input" type="text" required="required"/><!--搜尋欄本身-->
+                    <label class="search_bar_label" for="search_bar_input">股票名稱/代號</label><!--外觀 在點選搜尋欄時會浮起-->
+                    <div class="bar"></div><!--外觀 搜尋欄下方那條底線-->
                 </div>
-                <button id="search_bar_btn" type="button" >Search</button>
+                <button id="search_bar_btn" type="button" >Search</button><!--搜尋按鈕-->
             </div>
 
-            <div class="stock_info">
-                <div id="stock_info_upper">
-                    <div id="stock_name">{{stock_name|default:"股票名稱"}}</div>
+            <div class="stock_info"><!--下方顯示查詢到的股票資訊-->
+                <div id="stock_info_upper"><!--stock區塊細分 此為stock內的上方-->
+                    <div id="stock_name">{{stock_name|default:"股票名稱"}}</div><!--使用Django template顯示 收到值前顯示default內容-->
                     <div class="stock_info_right">
                         <div id="stock_number">{{stock_number|default:"股票代號"}}</div>
                         <div id="stock_fullname">{{stock_fullname|default:"股票全名"}}</div>
@@ -70,7 +59,7 @@
                 </div>
 
 
-                <div class="stock_market_info">
+                <div class="stock_market_info"><!--stock區塊細分 此為stock內的下方-->
                     <table id="stock_table">
                         <tr>
                             <td colspan="2"><div id="stock_time">{{stock_time_clock|default:"HH:MM:SS"}}</div></td>
@@ -87,7 +76,7 @@
                             <td><div id="best_bid_volume">{{stock_best_ask_volume}}</div></td>
                         </tr>
                     </table>
-                        <div id="buttom_row">
+                        <div id="buttom_row"><!--與table格數不對，直接在外面拉一塊div使用flex分配空間-->
                             <div >開盤價&emsp;
                             <div  id="opening_price">{{stock_open}}</div>
                             </div>

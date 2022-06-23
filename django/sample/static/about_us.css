@@ -1,12 +1,6 @@
 @import './reset.css';
 @import './main.css';
-/* Color Set
-#564787
-#DBCBD8
-#F2FDFF
-#9AD4D6
-#101935
- */
+/*Color Set #564787 #DBCBD8 #F2FDFF #9AD4D6 #101935*/
 
 /* --右側內容-- */
 
@@ -33,7 +27,7 @@
     max-width: 100%;
     height: 50%;
 }
-
+/* 人物卡框架 */
 .card_wrapper{
     width:20vw;
     height:80vh;
@@ -51,6 +45,7 @@
     cursor: pointer;
     transition: 0.5s;
 }
+/* 人物卡照片 */
 .profile_picture{
     position: absolute;
     top: 0px;
@@ -102,6 +97,8 @@
     color:#ffffff;
     background-color: #232f3e75;
 }
+
+/* 以下for彩蛋 */
 
 #surprise{
     position: fixed;

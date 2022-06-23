@@ -1,15 +1,12 @@
 @import './reset.css';
-/*Color Set
-#564787
-#DBCBD8
-#F2FDFF
-#9AD4D6
-#101935
- */
+/*Color Set #564787 #DBCBD8 #F2FDFF #9AD4D6 #101935*/
 
 body{
     font-family:'微軟正黑體';
 }
+
+
+/* 按鈕外觀 */
 
 .button span {
     cursor: pointer;
@@ -17,7 +14,6 @@ body{
     position: relative;
     transition: 0.5s;
 }
-
 .button span:after {
     content: '\00bb';
     position: absolute;
@@ -26,22 +22,20 @@ body{
     right: -20px;
     transition: 0.5s;
 }
-
 .button:hover span {
     padding-right: 25px;
 }
-
 .button:hover span:after {
     opacity: 1;
     right: 0;
 }
-
 
 .container{
     position:relative;
     height: 100vh;
     width:100vw;
 }
+
 
 /*
 
@@ -63,7 +57,9 @@ body{
     background-color: #335585;
     margin: 0px auto;
 }
+
 /*左側選單區塊*/
+
 nav{
     display: flex;
     flex-direction: column;
@@ -93,7 +89,6 @@ nav a:active{
 #for_menu_title{
     display: inline-flex;
     flex-direction: row;
-    /* width: 200%; */
 }
 #menu_text{
     color:white;
@@ -102,16 +97,16 @@ nav a:active{
     display: flex;
     justify-content: center;
     align-items: center;
-    writing-mode: horizontal;
     padding:2% 1% 2% 1%;
     flex-direction: row;
     font-size:35px;
 }
-/*for左側選單的按*/
+
+/*for開關選單按鈕*/
 #menu_button {
-    /* position: absolute; */
-    /* align-self:flex-start; */
     padding-left: 5px;
+    max-height: 40px;
+    z-index: 6;
 }
 .bar1, .bar2, .bar3 {
     width: 35px;
@@ -146,8 +141,6 @@ nav a:active{
     left: 0;
     width:100vw;
     height:160vh;
-    /* background-color: #F2FDFF; */
-    /* z-index: 3; */
 }
 
 
@@ -166,7 +159,6 @@ nav a:active{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-left: 15vw; */
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.381);
 }
 #banner_title{
@@ -183,7 +175,6 @@ nav a:active{
 
 
 .search_bar_block{
-    /* background-color: #1C2D5E; */
     display: flex;
     justify-content:center;
     align-items: center;
@@ -197,12 +188,10 @@ nav a:active{
     width:20%;
     display: block;
     width: 100%;
-    /* padding-top: 36.6666666667px; */
     border: none;
     border-radius: 0;
     color: white;
     background: #2c486d;
-    /* font-size: 36.6666666667px; */
     transition: 0.3s ease;
 }
 .search_bar_label {
@@ -239,11 +228,8 @@ nav a:active{
     position: absolute;
     width: 500px;
     height: 100%;
-    /* background: #2196f3; */
-    /* transform: translateX(0%); */
 }
 #search_bar_input:focus ~ .bar:before{
-    /* transform: translateX(1%); */
     background: #61b1f3;
 }
 #search_bar_input:valid ~ .bar:before{
@@ -251,7 +237,6 @@ nav a:active{
 }
 #search_bar_btn{
      margin-left: 0.3cm;
-    /*height: 65%; */
     display: inline-block;
     padding: 6px 15px;
     font-size: 20px;
@@ -296,7 +281,6 @@ nav a:active{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* padding-left: 15vw; */
 }
 .stock_info{
     display:flex;
@@ -309,15 +293,12 @@ nav a:active{
     justify-content: space-evenly;
 }
 #stock_name{
-    /* background-color: #85B8CB; */
     font-size: 5em;
-    /* margin:10% 5% 10% 5%; */
     padding: 10% 5% 10% 5%;
     display:inline-block;
     vertical-align:top;
 }
 .stock_info_right{
-    /* margin:40px; */
     padding: 0% 5% 0% 5%;
     display:flex;
     flex-direction:column;
@@ -356,7 +337,5 @@ td{
 }
 #buttom_row div{
     display: flex;
-
-    /* flex-direction: row; */
     flex-wrap: nowrap;
 }

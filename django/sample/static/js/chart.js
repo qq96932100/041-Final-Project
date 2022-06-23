@@ -10,7 +10,7 @@ search_bar_btn.addEventListener('click', function () {
         console.log('begin_date='+begin_date + ', end_date=' + end_date);
         console.log("suscces")
         send_data();
-        set_chart('trend.jpg', time+'_kline.jpg'); //這裡輸入圖表檔名
+        set_chart(time+'_trend.jpg', time+'_kline.jpg'); //這裡輸入圖表檔名
     }
     // reload();
   }, true);

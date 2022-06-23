@@ -68,13 +68,7 @@ def open_close_pic(input_num, begin_time, end_time, time):
             plt.figure(figsize=(15,10),dpi=100,linewidth = 2)
             plt.plot(month,open,'s-',color = 'r', label="open")
             plt.plot(month,close,'o-',color = 'g', label="close")
-            fileTrend = '../sample/static/trend.jpg'
 
-            if(os.path.isfile(fileTrend)):
-                os.remove(fileTrend)
-                print('exist')
-            else:
-                print('not exist')
 
             # 設定圖片標題，以及指定字型設定，x代表與圖案最左側的距離，y代表與圖片的距離
             plt.title("open-close line pic", x=0.5, y=1.03)
@@ -86,7 +80,7 @@ def open_close_pic(input_num, begin_time, end_time, time):
             plt.xlabel("month", fontsize=20, labelpad = 15)
             plt.ylabel("price", fontsize=20, labelpad = 20)
             plt.legend(loc = "best", fontsize=5)
-            plt.savefig('../sample/static/trend.jpg')
+            plt.savefig('../sample/static/{}_trend.jpg'.format(time))
 
             figure= go.Figure(
             data=[
@@ -106,13 +100,7 @@ def open_close_pic(input_num, begin_time, end_time, time):
                 xaxis_title='Date',
                 yaxis_title='Price',
             )
-            fileKline = '../sample/static/kline.jpg'
-            print(os.path.isfile(fileKline))
-            if(os.path.isfile(fileKline)):
-                os.remove(fileKline)
-                print('exist')
-            else:
-                print('not exist')
+
             figure.write_image("../sample/static/"+ str(time)+"_kline.jpg", width=1500, height=1000)
             # plt.savefig('../sample/static/kline.jpg')
             # figure.show()

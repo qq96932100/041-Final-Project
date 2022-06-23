@@ -28,9 +28,9 @@ name_attribute = [
         'Transcation'
         ]
 
-
-target = twstock.Stock(all[7])
-all_stock(target,7)
+for i in range(0,10):
+    target = twstock.Stock(all[i])
+    all_stock(target,i)
 
 
 

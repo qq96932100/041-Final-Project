@@ -4,11 +4,17 @@ let bool = 1;
 menu_bar_btn.addEventListener('click', function () {
     bool = !bool;
     if(bool){
+      myFunction(this);
       openNav();
     }else{
+      myFunction(this);
       closeNav();
     }
   }, true);
+
+function myFunction(x) {
+      x.classList.toggle("change");
+}
 
 function openNav() {
     menu = document.getElementsByClassName("menu")[0];

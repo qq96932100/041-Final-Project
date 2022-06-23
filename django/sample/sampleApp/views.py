@@ -69,13 +69,13 @@ def open_close_pic(input_num, begin_time, end_time, time):
             plt.plot(month,open,'s-',color = 'r', label="open")
             plt.plot(month,close,'o-',color = 'g', label="close")
             fileTrend = '../sample/static/trend.jpg'
-           
+
             if(os.path.isfile(fileTrend)):
                 os.remove(fileTrend)
                 print('exist')
             else:
                 print('not exist')
-            
+
             # 設定圖片標題，以及指定字型設定，x代表與圖案最左側的距離，y代表與圖片的距離
             plt.title("open-close line pic", x=0.5, y=1.03)
             plt.xticks(fontsize=7)
@@ -113,7 +113,7 @@ def open_close_pic(input_num, begin_time, end_time, time):
                 print('exist')
             else:
                 print('not exist')
-            figure.write_image("../sample/static/"+time+"_kline.jpg", width=1500, height=1000)
+            figure.write_image("../sample/static/"+ str(time)+"_kline.jpg", width=1500, height=1000)
             # plt.savefig('../sample/static/kline.jpg')
             # figure.show()
 
@@ -127,7 +127,7 @@ def chart(request):
     input_num = request.GET.get('input_num')
     begin_date = request.GET.get('begin_date')
     end_date = request.GET.get('end_date')
-    time = request.GET.get('t')   
+    time = request.GET.get('t')
 
     if(type(input_num) != 'NoneType' and type(begin_date) != 'NoneType' and type(end_date) != 'NoneType'):
         print('input_num:', input_num, ', begin_date:', begin_date, ', end_date:', end_date,', t:', time)

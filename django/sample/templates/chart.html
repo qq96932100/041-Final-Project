@@ -26,7 +26,7 @@
                 </ul>
             </nav>
         </div>
-        <div id="menu_button" onclick="myFunction(this)">
+        <div id="menu_button" onclick="myFunction(this)" class="change">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
@@ -50,11 +50,11 @@
 
             <div class="search_bar_block">
                 <div class="search_bar">
-                    <form action="/chart/twstock/" method="post"></form>
-                        <input id="search_bar_input"  type="text" required="required"/>
-                        <label class="search_bar_label" for="search_bar_input">股票名稱/代號</label>
-                        <div class="bar"></div>
-                    </form>
+                    <!-- <form action="/chart/twstock/" method="post"></form> -->
+                    <input id="search_bar_input"  type="text" required="required"/>
+                    <label class="search_bar_label" for="search_bar_input">股票名稱/代號</label>
+                    <div class="bar"></div>
+                    <!-- </form> -->
                 </div>
                 <button id="search_bar_btn" type="button">Search</button>
             </div>
@@ -75,5 +75,6 @@
 </div>
 <!-- js -->
 <script src = "../static/js/chart.js"></script>
+<script src = "../static/js/menu.js"></script>
 </body>
 </html>

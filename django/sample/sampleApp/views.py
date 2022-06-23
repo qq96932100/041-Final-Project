@@ -113,7 +113,7 @@ def open_close_pic(input_num, begin_time, end_time, time):
                 print('exist')
             else:
                 print('not exist')
-            figure.write_image("../sample/static/kline.jpg", width=1500, height=1000)
+            # figure.write_image("../sample/static/kline.jpg", width=1500, height=1000)
             # plt.savefig('../sample/static/kline.jpg')
             # figure.show()
 

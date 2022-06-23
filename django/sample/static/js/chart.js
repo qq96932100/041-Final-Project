@@ -1,5 +1,4 @@
 const search_bar_btn = document.getElementById('search_bar_btn');
-// const search_bar_btn = document.getElementById('search_bar_btn');
 
 search_bar_btn.addEventListener('click', function () {
   let search_bar_input = get_input()[0];
@@ -9,8 +8,8 @@ search_bar_btn.addEventListener('click', function () {
   if(search_bar_input != '' & begin_date != '' & end_date != ''){ //避免空值error
         console.log('begin_date='+begin_date + ', end_date=' + end_date);
         console.log("suscces")
-        set_chart('trend.jpg', 'kline.jpg'); //這裡輸入圖表檔名
         send_data();
+        set_chart('trend.jpg', 'kline.jpg'); //這裡輸入圖表檔名      
     }
     // reload();
   }, true);
@@ -23,7 +22,6 @@ function get_input() {
         let search_bar_input = document.getElementById("search_bar_input").value;
         let begin_date = document.getElementById("begin_date").value;
         let end_date =  document.getElementById("end_date").value;
-        // document.getElementById("stock_number").innerHTML = search_bar_input.value;
         return [search_bar_input,begin_date, end_date]; // 我是數組
     }
 
